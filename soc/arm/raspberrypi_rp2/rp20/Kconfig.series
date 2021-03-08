@@ -1,0 +1,18 @@
+
+# Hardware Series selection, Included by 
+config SOC_SERIES_RP20
+	bool "Raspberry Pi RP20 Series MCU"
+	select SOC_FAMILY_RP2
+	select ARM
+	select CPU_CORTEX_M0PLUS
+	select CPU_CORTEX_M_HAS_SYSTICK
+	select CPU_CORTEX_M_HAS_VTOR
+	help
+		Enable support for RP20 Series MCU
+
+
+if SOC_SERIES_RP20
+
+source "soc/arm/raspberrypi_rp2/rp20/Kconfig.defconfig.rp2040"
+
+endif

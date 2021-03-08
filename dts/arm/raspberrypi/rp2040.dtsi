@@ -1,0 +1,153 @@
+
+#include <mem.h>
+#include <arm/armv6-m.dtsi>
+
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		// watchdog0 = &wdog;
+	};
+
+	chosen {
+		// zephyr,flash-controller = &nvmctrl;
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		cpu0: cpu@0 {
+			device_type = "cpu";
+			compatible = "arm,cortex-m0+";
+			reg = <0>;
+		};
+
+		cpu1: cpu@1 {
+			device_type = "cpu";
+			compatible = "arm,cortex-m0+";
+			reg = <1>;
+		};
+
+	};
+
+	sram0: memory@20000000 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "mmio-sram";
+		reg = <0x20000000 DT_SIZE_K(256)>;
+	};
+
+	soc {
+
+		// usb0: usb@0x50110000 {
+			//       compatible = "";
+			//       reg = <0x50110000 0x102>
+		// };
+
+		// pm
+
+		// clocks
+
+		// gpio
+
+		// gpiobank0: gpiocontroller@40014000{
+		// 	label = "GPIO_BANK0";
+		// 	reg = < 0x40014000 0xfff >;
+		// 	#gpio-cells = <30>;
+
+		// 	gpio0: gpio@40014000 {
+		// 		label = "GPIO_0";
+		// 	    compatible = "rp20,gpio";
+		// 	    gpio-controller;
+				
+		// 	    reg = <0x40014000 0x08>;
+		// 	};
+
+		// };
+
+
+
+		// // i2c
+		// i2c0: i2c@0x40044000 {
+
+		// };
+
+		// i2c1: i2c@0x40048000 {
+
+		// };
+
+		// // spi
+
+		// spi0: spi@0x4003c000 {
+
+		// };
+
+		// spi1: spi@0x40040000 {
+
+		// };
+
+		// // pwm
+
+		// pwm0: pwm@0x40050000 {
+
+		// };
+
+		// uart
+		// uart0: uart@40034000 {
+			//         #size-cells = <1>;
+			//         #address-cells = <1>;
+			//         compatible = "arm,pl011";
+			//         status = "disabled";
+			//         reg = <0x40034000 0xFFF>
+		// };
+
+		// uart1: uart@40038000 {
+			//         #size-cells = <1>;
+			//         #address-cells = <1>;
+			//         compatibe = "arm,pl011";
+			//         status = "disabled";
+			//         reg = <0x40034000 0xFFF>
+		// };
+		// timer
+
+		// tim0: timer@0x40054000 {
+
+		// };
+
+		// // watchdog
+		// wdog0: watchdog@40058000 {
+			//     #address-cells = <1>;
+			//     #size-cells = <1>;
+			//     reg = <0x40058000>;
+		// };
+
+		// // rtc
+		// rtc0: rtc@0x4005c000 {
+
+		// };
+
+		// // adc
+		// adc0@ adc@0x4004c000 {
+
+		// };
+
+		// // ssi
+
+		// progammable io
+
+		// pio0: pio@0x50200000 {
+
+		// };
+
+		// pio1: pio@0x50300000 {
+
+		// };
+	};
+
+
+};
+
+&nvic {
+	arm,num-irq-priority-bits = <2>;
+};

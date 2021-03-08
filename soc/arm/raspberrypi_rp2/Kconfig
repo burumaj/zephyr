@@ -1,0 +1,21 @@
+# Raspberry Pi Foundation RP2XXX family configuration options
+
+# Copyright (c) 2017 Google LLC.
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_FAMILY_RP2
+	bool
+	help
+		"support for the RP2 dual core arm MCU"
+
+config SOC_FAMILY
+	string
+	default "raspberrypi_rp2" if SOC_FAMILY_RP2
+
+config SOC_SERIES
+	string
+	default "rp20" if SOC_SERIES_RP20
+
+# Raspberry Pi Foundation RP2 series
+
+# SPDX-License-Identifier: Apache-2.0

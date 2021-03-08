@@ -1,0 +1,18 @@
+if SOC_SERIES_RP20
+
+config SOC_SERIES
+	default "rp20"
+
+
+
+if GPIO
+
+config GPIO_RP20
+	bool
+	default y
+
+endif # GPIO
+
+source "soc/arm/raspberrypi_rp2/rp20/Kconfig.defconfig.rp2040"
+
+endif # SOC_SERIES_RP20

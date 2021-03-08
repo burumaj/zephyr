@@ -1,0 +1,13 @@
+if SOC_PART_NUMBER_RP2040
+
+config SOC
+	default "rp2040"
+
+config NUM_IRQS
+	default 26
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 125000000
+
+
+endif

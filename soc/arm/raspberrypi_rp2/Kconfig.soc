@@ -1,0 +1,17 @@
+# Atmel SAM0 MCU series selection
+
+# Copyright (c) 2017 Google LLC.
+# SPDX-License-Identifier: Apache-2.0
+
+# Included under "SoC/CPU/Configuration Selection"
+
+source "soc/arm/raspberrypi_rp2/rp20/Kconfig.series"
+
+choice 
+	prompt "RP20 Series MCU selection"
+	depends on SOC_SERIES_RP20
+
+config SOC_PART_NUMBER_RP2040
+	bool "RP2040"
+
+endchoice
