@@ -5,7 +5,7 @@
 
 if SOC_SERIES_RP20XX
 
-source "soc/arm/raspberry_pi/rp20/Kconfig.defconfig.rp20*"
+source "soc/arm/raspberrypi/rp20/Kconfig.defconfig.rp20*"
 
 config SOC_SERIES
 	default "rp2040"

@@ -11,6 +11,6 @@ config SOC_FAMILY
 	string
 	default "raspberry_pi_rp"
 
-source "soc/arm/raspberry_pi/*/Kconfig.soc"
+source "soc/arm/raspberrypi/*/Kconfig.soc"
 
 endif # SOC_FAMILY_RASPBERRY_PI
