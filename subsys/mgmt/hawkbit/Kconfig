@@ -81,6 +81,9 @@ config HAWKBIT_DDI_SECURITY_TOKEN
 	  Authentication security token for the configured Hawkbit DDI
 	  authentication mode.
 
+config HAWKIT_CUSTOM_DEVICE_INFO
+	bool "Use custom implemention of device info"
+
 module = HAWKBIT
 module-str = Log Level for hawkbit
 module-help = Enables logging for Hawkbit code.

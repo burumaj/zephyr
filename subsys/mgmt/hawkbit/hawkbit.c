@@ -30,6 +30,7 @@ LOG_MODULE_REGISTER(hawkbit, CONFIG_HAWKBIT_LOG_LEVEL);
 
 #include "hawkbit_priv.h"
 #include "hawkbit_device.h"
+#include "hawkbit_device_info.h"
 #include "mgmt/hawkbit.h"
 #include "hawkbit_firmware.h"
 
@@ -141,12 +142,6 @@ static const struct json_obj_descr json_ctl_res_descr[] = {
 			      json_ctl_res_polling_descr),
 	JSON_OBJ_DESCR_OBJECT(struct hawkbit_ctl_res, _links,
 			      json_ctl_res_links_descr),
-};
-
-static const struct json_obj_descr json_cfg_data_descr[] = {
-	JSON_OBJ_DESCR_PRIM(struct hawkbit_cfg_data, VIN, JSON_TOK_STRING),
-	JSON_OBJ_DESCR_PRIM(struct hawkbit_cfg_data, hwRevision,
-			    JSON_TOK_STRING),
 };
 
 static const struct json_obj_descr json_cfg_descr[] = {
@@ -943,8 +938,7 @@ static bool send_request(enum http_method method,
 	case HAWKBIT_CONFIG_DEVICE:
 		memset(&cfg, 0, sizeof(cfg));
 		cfg.mode = "merge";
-		cfg.data.VIN = device_id;
-		cfg.data.hwRevision = "3";
+		hawkbit_device_get_cfg_data(&cfg.data);
 		cfg.id = "";
 		cfg.time = "";
 		cfg.status.execution = exec;

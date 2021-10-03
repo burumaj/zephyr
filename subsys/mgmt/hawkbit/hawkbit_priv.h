@@ -15,6 +15,8 @@
 
 #include <data/json.h>
 
+#include "hawkbit_device_info.h"
+
 #define HAWKBIT_SLEEP_LENGTH 8
 
 enum hawkbit_http_request {
@@ -77,11 +79,6 @@ struct hawkbit_ctl_res_links {
 struct hawkbit_ctl_res {
 	struct hawkbit_ctl_res_polling config;
 	struct hawkbit_ctl_res_links _links;
-};
-
-struct hawkbit_cfg_data {
-	const char *VIN;
-	const char *hwRevision;
 };
 
 struct hawkbit_cfg {
