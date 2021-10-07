@@ -1,3 +1,5 @@
+# Copyright (c) 2021, Advanced Climate Systems
+# SPDX-License-Identifier: Apache-2.0
 description: Sensirion SCD30 C02 Sensor
 
 compatible: "sensirion,scd30"

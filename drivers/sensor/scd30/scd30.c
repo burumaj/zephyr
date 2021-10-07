@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2021 Advanced Climate Systems
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
 #define DT_DRV_COMPAT sensirion_scd30
 
 #include <device.h>

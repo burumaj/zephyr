@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2021 Advanced Climate Systems
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 #ifndef ZEPHYR_DRIVER_SENSOR_SCD30_SCD30_H_
 #define ZEPHYR_DRIVER_SENSOR_SCD30_SCD30_H_
 
