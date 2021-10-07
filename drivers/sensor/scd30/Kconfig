@@ -1,0 +1,30 @@
+
+menuconfig SCD30
+    depends on I2C
+    select SENSIRION_COMMON
+    bool "Sensirion SCD30 CO2 Sensor"
+    default false
+
+if SCD30
+
+comment "SCD30 Options"
+
+config SCD30_MEASUREMENT_INTERVAL
+    int "measurement interval in seconds"
+    default 30
+    range 2 1800
+    help
+      The interval with wich measurement are done.
+      Has to be in the range [2; 1800].
+
+config SCD30_ENABLE_ALTITUDE_COMPENSATION
+    bool "Enable altitude compensation"
+
+config SCD30_ENABLE_OFFSETS
+    bool "Enable temperature and RH offsets"
+
+module = SCD30
+module-str = sensirion-scd30
+source "subsys/logging/Kconfig.template.log_config"
+
+endif

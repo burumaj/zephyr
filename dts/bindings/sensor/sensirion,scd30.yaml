@@ -1,0 +1,9 @@
+description: Sensirion SCD30 C02 Sensor
+
+compatible: "sensirion,scd30"
+
+include: i2c-device.yaml
+
+properties:
+    label:
+      required: true
