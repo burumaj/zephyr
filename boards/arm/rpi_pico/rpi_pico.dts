@@ -8,6 +8,7 @@
 
 #include <rpi_pico/rp2040.dtsi>
 #include "rpi_pico-pinctrl.dtsi"
+#include <dt-bindings/pwm/pwm.h>
 
 / {
 	chosen {
@@ -26,8 +27,18 @@
 		};
 	};
 
+	pwm_leds {
+		compatible = "pwm-leds";
+		pwm_led0: pwm_led_0 {
+			status = "okay";
+			pwms = < &pwm0 25 PWM_POLARITY_NORMAL>;
+			label = "PWM_LED";
+		};
+	};
+
 	aliases {
 		led0 = &led0;
+		pwm-led0 = &pwm_led0;
 	};
 };
 
@@ -67,4 +78,10 @@
 
 &gpio0 {
 	status = "okay";
+};
+
+&pwm0 {
+	status = "okay";
+	pinctrl-0 = <&pwm0_ch4b_default>;
+	pinctrl-names = "default";
 };

@@ -15,4 +15,10 @@
 			input-enable;
 		};
 	};
+
+	pwm0_ch4b_default: pwm0_ch4b_default {
+		group1 {
+			pinmux = < PWM_4B_P25 >;
+		};
+	};
 };

@@ -57,6 +57,9 @@ hardware features:
    * - GPIO
      - :kconfig:`CONFIG_GPIO`
      - :dtcompatible:`rpi,pico-gpio`
+   * - PWM
+     - :kconfig: `CONFIG_PWM`
+     - :dtcompatible: `rpi,pico-pwm`
 
 Programming and Debugging
 *************************
