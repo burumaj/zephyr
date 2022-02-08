@@ -81,6 +81,17 @@
 			label = "UART_1";
 			status = "disabled";
 		};
+
+		pwm0: pwm@40050000{
+			compatible = "raspberrypi,pico-pwm";
+			reg = < 0x40050000 DT_SIZE_K(4) >;
+			clocks = < &peripheral_clk >;
+			interrupts = <4 RPI_PICO_DEFAULT_IRQ_PRIORITY>;
+			interrupt-names = "PWM_IRQ_WRAP";
+			label = "PWM_0";
+			#pwm-cells = < 2 >;
+			status = "disabled";
+		};
 	};
 };
 
