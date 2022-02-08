@@ -13,3 +13,8 @@ config PICOSDK_USE_GPIO
 	bool
 	help
 	  Use the GPIO driver from pico-sdk
+
+config PICOSDK_USE_PWM
+	bool
+	help
+	  Use the PWM driver form pico-sdk

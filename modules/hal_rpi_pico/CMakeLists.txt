@@ -78,4 +78,8 @@ if(CONFIG_HAS_RPI_PICO)
           ${rp2_common_dir}/hardware_uart/uart.c)
   zephyr_include_directories_ifdef(CONFIG_PICOSDK_USE_UART
           ${rp2_common_dir}/hardware_uart/include)
+
+  zephyr_include_directories_ifdef(CONFIG_PICOSDK_USE_PWM
+          ${rp2_common_dir}/hardware_pwm/include)
+
 endif()
