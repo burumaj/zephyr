@@ -5,7 +5,7 @@ description: Raspberry Pi Pico PWM
 
 compatible: "raspberrypi,pico-pwm"
 
-include: [pwm-controller.yaml, pinctrl-device.yaml, base.yaml]
+include: [base.yaml]
 
 properties:
     reg:
@@ -13,10 +13,3 @@ properties:
 
     interrupts:
       required: true
-
-    "#pwm-cells":
-      const: 2
-
-pwm-cells:
-  - channel
-  - flags
