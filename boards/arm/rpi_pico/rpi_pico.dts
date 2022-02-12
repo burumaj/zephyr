@@ -80,6 +80,10 @@
 	status = "okay";
 };
 
+&pwm_ctrl {
+	status = "okay";
+};
+
 &pwm4 {
 	status = "okay";
 	pinctrl-0 = <&pwm_ch4b_default>;

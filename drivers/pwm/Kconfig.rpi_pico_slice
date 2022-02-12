@@ -3,7 +3,8 @@
 
 config PWM_RPI_PICO
     bool "RP2040 PWM"
-    default y
+		default y
+		depends on SOC_SERIES_RP2XXX
     select PICOSDK_USE_PWM
     help
       Enable PWM driver for RP2040 MCU
