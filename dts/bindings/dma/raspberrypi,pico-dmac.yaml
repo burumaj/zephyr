@@ -1,0 +1,20 @@
+description: Raspberry Pi RP2 series DMA controller
+
+compatible: "raspberrypi,pico-dmac"
+
+include: dma-controller.yaml
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: true
+
+    "#dma-cells":
+      const: 3
+
+dma-cells:
+  - channel
+  - trigger-src
+  - int-nr

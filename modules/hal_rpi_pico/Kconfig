@@ -17,4 +17,9 @@ config PICOSDK_USE_GPIO
 config PICOSDK_USE_PWM
 	bool
 	help
-	  Use the PWM driver form pico-sdk
+	  Use the PWM driver from pico-sdk
+
+config PICOSDK_USE_DMA
+	bool
+	help
+	  Use the DMA driver from pico-sdk

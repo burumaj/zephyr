@@ -82,80 +82,94 @@
 			status = "disabled";
 		};
 
-		pwm_ctrl: pwm-ctrl@40050000{
+		pwm_ctrl: pwm-ctrl@40050000 {
 			compatible = "raspberrypi,pico-pwm";
-			reg = < 0x40050000 DT_SIZE_K(4) >;
-			clocks = < &peripheral_clk >;
+			reg = <0x40050000 DT_SIZE_K(4)>;
+			clocks = <&peripheral_clk>;
 			interrupts = <4 RPI_PICO_DEFAULT_IRQ_PRIORITY>;
 			interrupt-names = "PWM_IRQ_WRAP";
 			label = "PWM_CTRL_0";
 			status = "disabled";
 
-			#address-cells = < 1 >;
-			#size-cells = < 0 >;
-			pwm0: pwm@0{
+			#address-cells = <1>;
+			#size-cells = <0>;
+			pwm0: pwm@0 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x0 >;
+				reg = <0x0>;
 				label = "PWM_0";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
 
-			pwm1: pwm@1{
+			pwm1: pwm@1 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x1 >;
+				reg = <0x1>;
 				label = "PWM_1";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
 
-			pwm2: pwm@2{
+			pwm2: pwm@2 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x2 >;
+				reg = <0x2>;
 				label = "PWM_2";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
 
-			pwm3: pwm@3{
+			pwm3: pwm@3 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x3 >;
+				reg = <0x3>;
 				label = "PWM_3";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
 
-			pwm4: pwm@4{
+			pwm4: pwm@4 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x4 >;
+				reg = <0x4>;
 				label = "PWM_4";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
 
-			pwm5: pwm@5{
+			pwm5: pwm@5 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x5 >;
+				reg = <0x5>;
 				label = "PWM_5";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
 
-			pwm6: pwm@6{
+			pwm6: pwm@6 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x6 >;
+				reg = <0x6>;
 				label = "PWM_6";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
 
-			pwm7: pwm@7{
+			pwm7: pwm@7 {
 				compatible = "raspberrypi,pico-pwm-slice";
-				reg = < 0x7 >;
+				reg = <0x7>;
 				label = "PWM_7";
 				#pwm-cells = <2>;
 				status = "disabled";
 			};
+		};
+
+		dmac: dma-controller@50000000 {
+			compatible = "raspberrypi,pico-dmac";
+			status = "okay";
+			clocks = <&peripheral_clk>;
+			reg = <0x50000000 DT_SIZE_K(4)>;
+			interrupts = <11 RPI_PICO_DEFAULT_IRQ_PRIORITY>,
+			             <12 RPI_PICO_DEFAULT_IRQ_PRIORITY>;
+			interrupt-names = "DMA_IRQ_0", "DMA_IRQ_1";
+			dma-channels = <12>;
+			dma-requests = <40>;
+			label = "DMA_0";
+			#dma-cells = <3>;
 		};
 	};
 };
