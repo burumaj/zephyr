@@ -178,6 +178,21 @@
 			status = "disabled";
 			#pwm-cells = <3>;
 		};
+
+		dmac: dma-controller@50000000 {
+			compatible = "raspberrypi,pico-dmac";
+			reg = <0x50000000 DT_SIZE_K(4)>;
+			resets = <&reset RPI_PICO_RESETS_RESET_DMA>;
+			status = "disabled";
+			clocks = <&peripheral_clk>;
+			interrupts = <11 RPI_PICO_DEFAULT_IRQ_PRIORITY>,
+			             <12 RPI_PICO_DEFAULT_IRQ_PRIORITY>;
+			interrupt-names = "DMA_IRQ_0", "DMA_IRQ_1";
+			dma-channels = <12>;
+			dma-requests = <40>;
+			#dma-cells = <2>;
+			dma-channel-mask = <0xfff>;
+		};
 	};
 };
 

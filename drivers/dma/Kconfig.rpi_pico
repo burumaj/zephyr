@@ -1,0 +1,5 @@
+config DMA_RPI_PICO
+    bool "RPI pico dma controller"
+    default y
+    depends on SOC_FAMILY_RPI_PICO
+    select PICOSDK_USE_DMA
