@@ -1,0 +1,19 @@
+# Copyright (c) 2021 Yonatan Schachter
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_ARDUINO_NANO_RP2040_CONNECT
+
+config BOARD
+	default "arduino_nano_rp2040_connect"
+
+config RP2_FLASH_AT25SF128A
+	default y
+
+if I2C_DW
+
+config I2C_DW_CLOCK_SPEED
+	default 100
+
+endif #I2C_DW
+
+endif # BOARD_RPI_PICO
